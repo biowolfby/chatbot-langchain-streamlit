@@ -1,23 +1,37 @@
 import os
 from dotenv import load_dotenv
-from openai import OpenAI
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_core.messages import SystemMessage
+from langchain_community.chat_message_histories import ChatMessageHistory
+from langchain_openai import ChatOpenAI
 
 load_dotenv()
 
+openai_api_key = os.getenv("OPENAI_API_KEY")
+
+prompt = ChatPromptTemplate.from_messages(
+    [
+        SystemMessage("You are a helpful assistant. Answer all questions to the best of your ability."),
+        MessagesPlaceholder(variable_name="messages"),
+    ]
+)
+
+llm = ChatOpenAI(api_key=openai_api_key, model="gpt-4o-mini", temperature=0.7)
+
+chain = prompt | llm
+
+chat_history = ChatMessageHistory()
+
 
 def main():
-    openai_api_key = os.environ.get("OPENAI_API_KEY")
+    while True:
+        user_input = input("You: ")
+        chat_history.add_user_message(user_input)
 
-    client = OpenAI(api_key=openai_api_key)
-    completion = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[
-            {"role": "user", "content": "write a haiku about ai"}
-        ],
-        temperature=0.7
-    )
+        response = chain.invoke({"messages": chat_history.messages})
+        print("Assistant:", response.content)
 
-    print(completion.choices[0].message.content)
+        chat_history.add_ai_message(response.content)
 
 
 if __name__ == "__main__":
