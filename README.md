@@ -60,7 +60,7 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt  
 
 # Set the command to run the application
-CMD ["python", "app.py"]
+CMD ["streamlit", "run", "chatbot_interface.py", "--server.port=8501"]
 ```
 
 ## 🚀 Step 2: Build the Docker Image
