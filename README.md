@@ -1,8 +1,8 @@
-# Chatbot with LangChain, OpenAI API, and Streamlit
+# Chatbot with LangChain, Mistral API, and Streamlit
 
 ## Overview
 
-This project demonstrates the implementation of a chatbot using LangChain and the OpenAI API, with Streamlit for the
+This project demonstrates the implementation of a chatbot using LangChain and the Mistral API, with Streamlit for the
 user interface.
 
 ## Getting Started
@@ -10,7 +10,7 @@ user interface.
 ### Prerequisites
 
 - Python 3.11.9
-- OpenAI API key
+- Mistral API key
 
 ### Project Setup
 
@@ -29,7 +29,7 @@ user interface.
     ```
 
 4. Copy `.env.template` and rename it to `.env`.
-   ≥ Make sure to add your OpenAI API key to the file.
+   ≥ Make sure to add your Mistral API key to the file.
 
 5. To start the assistant, run this command in your terminal:
    ```bash
