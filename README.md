@@ -112,5 +112,3 @@ docker rmi my-python-app
 4. **Check logs and manage containers** (`docker ps`, `docker logs`, `docker stop`, `docker rm`)
 5. **(Optional) Remove Docker image** if needed
 
-Let me know if you need further clarification! 🚀
-
