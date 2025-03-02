@@ -20,7 +20,7 @@ user interface.
    ```
 2. Activate the virtual environment:
    ```bash
-   source .venv/bin/activate
+   .\.venv\Scripts\activate
    ```
    
 3. Install the required dependencies:
