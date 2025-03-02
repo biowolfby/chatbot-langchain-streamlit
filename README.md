@@ -20,12 +20,12 @@ user interface.
    ```
 2. Activate the virtual environment:
    ```bash
-   .\.venv\Scripts\activate
+   .venv\Scripts\activate
    ```
    
 3. Install the required dependencies:
    ```bash
-    pip install -r requirements.txt
+    pip install -r requirements_.txt
     ```
 
 4. Copy `.env.template` and rename it to `.env`.
