@@ -22,6 +22,11 @@ user interface.
    ```bash
    .venv\Scripts\activate
    ```
+   if need permitions
+   ```bash
+   Set-ExecutionPolicy Unrestricted -Scope Process
+   ```
+
    
 3. Install the required dependencies:
    ```bash

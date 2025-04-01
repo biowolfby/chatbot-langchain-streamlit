@@ -13,7 +13,7 @@ class ChatbotCore:
             system_prompt="You are a helpful assistant. Answer all questions to the best of your ability.",
             model="pixtral-12b-2409",
             temperature=0.7,
-    ):
+        ):
         if mistral_api_key is None:
             load_dotenv()
             mistral_api_key = os.getenv("MISTRAL_API_KEY")
@@ -53,6 +53,7 @@ class ChatbotCore:
         response = self.chain.invoke({"messages": self.chat_history.messages})
         self.chat_history.add_ai_message(response.content)
         return response.content
+        
 
     def get_history(self):
         """
